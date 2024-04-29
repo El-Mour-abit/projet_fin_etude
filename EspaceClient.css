@@ -1,0 +1,61 @@
+h1{
+    color: blue;
+    font-size: 75px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+    text-align: center;
+    margin-top: 10%;
+
+}
+main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 10%;
+    
+}
+.paragraphe{
+    font-size: 25px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: justify;
+    margin-left: 20px;
+    margin-top: 1%;
+}
+.image img{
+    display: inline-block;
+    width: 500px;
+    margin-right: 20px;
+}
+button{
+    background-color: grey;
+    padding: 20px;
+    margin: 7%;
+    margin-left: 50%;
+    color: white;
+}
+button:hover{
+    background-color: rgb(144, 204, 204);
+
+}
+@media (max-width: 900px) {
+    main {
+        flex-direction: column; /* Affichage en colonne sur les écrans plus petits */
+    }
+    .image img{
+        margin-right: 0; /* Aucun espace à droite sur les écrans plus petits */
+        margin-bottom: 20px; /* Espacement entre l'image et le texte */
+    }
+    button {
+        margin-left: auto; /* Centrage du bouton sur les écrans plus petits */
+        margin-right: auto;
+    }
+}
+
+/* Pour les écrans encore plus petits, comme les smartphones */
+@media (max-width: 900px) {
+    h1 {
+        font-size: 50px; /* Réduire la taille du titre pour les petits écrans */
+    }
+    .paragraphe {
+        font-size: 20px; /* Réduire la taille du texte pour les petits écrans */
+    }
+}
