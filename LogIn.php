@@ -11,7 +11,7 @@ if(isset($_POST['login_submit'])) {
     $req = "SELECT * FROM client WHERE email = '$login_email' AND password = '$login_password'";
     $reponse = $con->query($req);
     if($reponse->num_rows > 0) {
-        header('location:EspaceClient.html');
+        // header('location:EspaceClient.html');
     }
   }
 ?>

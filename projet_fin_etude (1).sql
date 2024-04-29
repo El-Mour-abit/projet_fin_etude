@@ -70,20 +70,21 @@ INSERT INTO `client` (`Num_Client`, `nom`, `prenom`, `adresse`, `email`) VALUES
 --
 
 CREATE TABLE `demande_stage` (
-  `ID_Demande` int(11) NOT NULL,
-  `ID_Stagiaire` int(11) DEFAULT NULL,
+  `ID_Demande` int(11) NOT NULL AUTO_INCREMENT,
   `nom` varchar(30) DEFAULT NULL,
   `prenom` varchar(30) DEFAULT NULL,
   `Texte` varchar(30) DEFAULT NULL,
-  `Cv` varchar(30) DEFAULT NULL
+  `Cv` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`ID_Demande`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 
 --
 -- Déchargement des données de la table `demande_stage`
 --
 
-INSERT INTO `demande_stage` (`ID_Demande`, `ID_Stagiaire`, `nom`, `prenom`, `Texte`, `Cv`) VALUES
-(10000, 100, 'El Morabit', 'Med', 'je veux un stage', 'hello');
+INSERT INTO `demande_stage` (`ID_Demande`, `nom`, `prenom`, `Texte`, `Cv`) VALUES
+(10000, 'El Morabit', 'Med', 'je veux un stage', 'hello');
 
 -- --------------------------------------------------------
 
@@ -144,9 +145,6 @@ ALTER TABLE `client`
 --
 -- Index pour la table `demande_stage`
 --
-ALTER TABLE `demande_stage`
-  ADD PRIMARY KEY (`ID_Demande`),
-  ADD KEY `ID_Stagiaire` (`ID_Stagiaire`);
 
 --
 -- Index pour la table `facture`
@@ -196,8 +194,7 @@ ALTER TABLE `stagiaire`
 --
 -- Contraintes pour la table `demande_stage`
 --
-ALTER TABLE `demande_stage`
-  ADD CONSTRAINT `demande_stage_ibfk_1` FOREIGN KEY (`ID_Stagiaire`) REFERENCES `stagiaire` (`ID_Stagiaire`);
+
 
 --
 -- Contraintes pour la table `facture`

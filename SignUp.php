@@ -19,7 +19,7 @@ session_start();
     } else{
     $res = mysqli_query($con, $add);
     if ($res) {
-        header('location:EspaceClient.html');
+        // header('location:EspaceClient.html');
         exit();
 
     }
