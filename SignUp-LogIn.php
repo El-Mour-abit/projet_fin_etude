@@ -11,16 +11,14 @@ include('LogIn.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LogIn/signUp</title>
     <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.3/components/contacts/contact-1/assets/css/contact-1.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="SignUp-LogIn.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
      <!-- header start -->
      <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand" href="http://www.onep.ma/">
             <img
               src="images/logoONEP.jpg"
               alt="ONEEP"
@@ -51,16 +49,15 @@ include('LogIn.php');
                 <a class="nav-link" href="SignUp-LogIn.html">Espace Client</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Espace Stagiaire</a>
+                <a class="nav-link" href="EspaceStagiaire.html">Espace Stagiaire</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="ContactUs.html">ContactUs</a>
               </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
-              <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">
-                Learn More
-              </button>
+            <a href="AboutUs.html" class="no-text-decoration btn btn-outline-dark my-2 my-sm-0">Learn More</a></button>
+
             </form>
           </div>
         </nav>

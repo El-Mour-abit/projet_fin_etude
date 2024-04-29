@@ -22,9 +22,6 @@ session_start();
         header('location:EspaceClient.html');
         exit();
 
-    }else{
-      $_SESSION["status"]= "Data inserted successfully";
-      header('location:SignUp-LogIn.php');
     }
   }
 }

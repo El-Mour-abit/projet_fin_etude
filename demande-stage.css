@@ -1,0 +1,21 @@
+h1{
+  text-align: center;
+  font-size: 50px;
+  padding: 20px;
+  font-weight: 900;
+}
+.stage_form{
+  background-color: rgb(144, 144, 255);
+  width: 120vh;
+  height: 500px;
+  border-radius: 15px;
+  margin: auto;
+}
+.stage_form h3{
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 35px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 900;
+}
