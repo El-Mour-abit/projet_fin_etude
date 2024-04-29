@@ -1,9 +1,13 @@
+<<<<<<< HEAD
+
+=======
 <?php
   include('SignUp.php');
 ?>
 <?php
 include('LogIn.php');
 ?>
+>>>>>>> c9f0fa2e50f6bf268902cbb903f980600d624d81
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -65,7 +69,10 @@ include('LogIn.php');
       <!-- header end -->
 <div class="container" id="container">
 	<div class="form-container sign-up-container">
+<<<<<<< HEAD
+=======
     <!-- sign Up form-->
+>>>>>>> c9f0fa2e50f6bf268902cbb903f980600d624d81
 		<form action="#" method="POST">
 			<h1>Sign Un</h1>
 			<input type="text" placeholder="prenom" name="signup-prenom"/>
@@ -77,18 +84,30 @@ include('LogIn.php');
 		</form>
 	</div>
 	<div class="form-container sign-in-container">
+<<<<<<< HEAD
+		<form action="#">
+=======
     <!-- log in form -->
 		<form action="#" method="POST">
+>>>>>>> c9f0fa2e50f6bf268902cbb903f980600d624d81
 			<h1>Log In</h1>
 			<div class="social-container">
 				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
 				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
 				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
 			</div>
+<<<<<<< HEAD
+			<span>ou utilisez votre compte</span>
+			<input type="email" placeholder="Email" />
+			<input type="password" placeholder="Password" />
+			<a href="#">Mot de passe oublié?</a>
+			<button>Log In</button>
+=======
 			<input type="email" placeholder="Email" name="login-email"/>
 			<input type="password" placeholder="Password" name="login-password"/>
 			<a href="#">Mot de passe oublié?</a>
 			<button name="login_submit" type="submit">Log In</button>
+>>>>>>> c9f0fa2e50f6bf268902cbb903f980600d624d81
 		</form>
 	</div>
 	<div class="overlay-container">
@@ -128,4 +147,8 @@ signInButton.addEventListener('click', () => {
 });
 </script>
 </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> c9f0fa2e50f6bf268902cbb903f980600d624d81
