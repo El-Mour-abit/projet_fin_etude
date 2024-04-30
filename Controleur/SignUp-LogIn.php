@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +15,7 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
           <a class="navbar-brand" href="http://www.onep.ma/">
             <img
-              src="images/logoONEP.jpg"
+              src="./images/logoONEP.jpg"
               alt="ONEEP"
               width="30px"
               height="30px"
@@ -34,19 +35,19 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item">
-                <a class="nav-link" href="Home.html">Acceuil</a>
+                <a class="nav-link" href="http://localhost/projet/projet_fin_etude/Views/Home.html">Acceuil</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="AboutUs.html">AboutUs</a>
+                <a class="nav-link" href="http://localhost/projet/projet_fin_etude/Views/AboutUs.html">AboutUs</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" href="http://localhost/projet/projet_fin_etude/Views/EspaceClient.html">Espace Client</a>
               </li>
               <li class="nav-item active">
-                <a class="nav-link" href="SignUp-LogIn.html">Espace Client</a>
+                <a class="nav-link" href="http://localhost/projet/projet_fin_etude/Controleur/SignUp-LogIn.php">Espace Stagiaire</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="EspaceStagiaire.html">Espace Stagiaire</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="ContactUs.html">ContactUs</a>
+                <a class="nav-link" href="http://localhost/projet/projet_fin_etude/Views/ContactUs.html">ContactUs</a>
               </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
@@ -63,19 +64,21 @@
 			<h1>Sign Un</h1>
 			<input type="text" placeholder="prenom" name="signup-prenom"/>
 			<input type="text" placeholder="nom" name="signup-nom"/>
-			<input type="text" placeholder="adresse" name="signup-adresse"/>
 			<input type="email" placeholder="Email" name="signup-email"/>
+      <span class="p">votre date_naissance</span>
+			<input type="date" placeholder="date" name="signup-dateN"/>
 			<input type="password" placeholder="Password" name="signup-password"/>
 			<button type="submit" name="submit">Sign Up</button>
 		</form>
+    <?$msgerr1?>
 	</div>
 	<div class="form-container sign-in-container">
-		<form action="LogIn.php">
+		<form  action="LogIn.php" method="POST">
 			<h1>Log In</h1>
-			<input type="email" placeholder="Email" />
-			<input type="password" placeholder="Password" />
+			<input type="text" placeholder="nom" name="login-nom"/>
+			<input type="password" placeholder="Password" name="login-password"/>
 			<a href="#">Mot de passe oublié?</a>
-			<button>Log In</button>
+			<button type="submit" name="login_submit">Log In</button>
 		</form>
 	</div>
 	<div class="overlay-container">

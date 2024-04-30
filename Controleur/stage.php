@@ -17,8 +17,15 @@ session_start();
     } else{
     $res = mysqli_query($con, $add);
     if ($res) {
-        // header('location:EspaceClient.html');
-        exit();
+        $_SESSION['login_success_message'] = '
+          <script>
+            swal({
+              title: "merci pour votre demande",
+              text: "Nous le vérifierons dès que possible",
+              icon: "success",
+            });
+          </script>
+        ';
 
     }
   }
