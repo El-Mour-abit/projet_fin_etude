@@ -1,0 +1,91 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #80dcd7;
+    margin: 0;
+    padding: 0;
+    
+  }
+
+
+h1 {
+    text-align: center;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+    color: #0d62bd;
+  }
+  form {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #2ddcf3;
+    padding: 50px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 2px solid #007bff;
+    height: 300px;
+  }
+  form:hover{
+    background-color: lightgrey;
+  }
+  input[type="email"],
+  input[type="password"],
+  button {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 50px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+  }
+  
+
+  input[type="email"]:hover{
+    background-color: rgb(209, 196, 196);
+    transition: background-color 0.5s ease;
+  }
+  input[type="password"]:hover{
+    display: inline-block;
+    background-color: rgb(209, 196, 196);
+    transition: background-color 0.5s ease;
+  }
+
+  
+  button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  p {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  a {
+    color: #007bff;
+    text-decoration: underline;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  footer {
+    text-align: center;
+    margin-top: 20px;
+    color: #666;
+  }
+  
+  /* Responsive styles */
+  @media screen and (max-width: 600px) {
+    form {
+      padding: 10px;
+    }
+  }
+
+  
