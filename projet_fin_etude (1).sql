@@ -39,8 +39,6 @@ CREATE TABLE `admin` (
 -- Déchargement des données de la table `admin`
 --
 
-INSERT INTO `admin` (`ID_Admin`, `nom`, `prenom`, `email`, `mot_de_passe`) VALUES
-('123R', 'Ben Moussa', 'selma', 'selma@gmail.com', '1234S');
 
 -- --------------------------------------------------------
 
@@ -60,8 +58,7 @@ CREATE TABLE `client` (
 -- Déchargement des données de la table `client`
 --
 
-INSERT INTO `client` (`Num_Client`, `nom`, `prenom`, `adresse`, `email`) VALUES
-(1, 'El Badmoussi', 'Anouar', 'Rue 05 hay sabadiya', 'anouar@gmail.com');
+
 
 -- --------------------------------------------------------
 
@@ -70,21 +67,18 @@ INSERT INTO `client` (`Num_Client`, `nom`, `prenom`, `adresse`, `email`) VALUES
 --
 
 CREATE TABLE `demande_stage` (
-  `ID_Demande` int(11) NOT NULL AUTO_INCREMENT,
+  `ID_Demande` int(11) NOT NULL,
+  `ID_Stagiaire` int(11) DEFAULT NULL,
   `nom` varchar(30) DEFAULT NULL,
   `prenom` varchar(30) DEFAULT NULL,
   `Texte` varchar(30) DEFAULT NULL,
-  `Cv` varchar(30) DEFAULT NULL,
-  PRIMARY KEY (`ID_Demande`)
+  `Cv` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
 
 --
 -- Déchargement des données de la table `demande_stage`
 --
 
-INSERT INTO `demande_stage` (`ID_Demande`, `nom`, `prenom`, `Texte`, `Cv`) VALUES
-(10000, 'El Morabit', 'Med', 'je veux un stage', 'hello');
 
 -- --------------------------------------------------------
 
@@ -102,8 +96,6 @@ CREATE TABLE `facture` (
 -- Déchargement des données de la table `facture`
 --
 
-INSERT INTO `facture` (`Num_Facture`, `Num_Client`, `Num_Contrat`) VALUES
-(1000, 1, '983417');
 
 -- --------------------------------------------------------
 
@@ -123,8 +115,6 @@ CREATE TABLE `stagiaire` (
 -- Déchargement des données de la table `stagiaire`
 --
 
-INSERT INTO `stagiaire` (`ID_Stagiaire`, `nom`, `prenom`, `email`, `date_naissance`) VALUES
-(100, 'El Morabit', 'Med', 'med@gmail.com', '2000-10-10');
 
 --
 -- Index pour les tables déchargées
@@ -145,6 +135,9 @@ ALTER TABLE `client`
 --
 -- Index pour la table `demande_stage`
 --
+ALTER TABLE `demande_stage`
+  ADD PRIMARY KEY (`ID_Demande`),
+  ADD KEY `ID_Stagiaire` (`ID_Stagiaire`);
 
 --
 -- Index pour la table `facture`
@@ -184,8 +177,7 @@ ALTER TABLE `facture`
 --
 -- AUTO_INCREMENT pour la table `stagiaire`
 --
-ALTER TABLE `stagiaire`
-  MODIFY `ID_Stagiaire` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+
 
 --
 -- Contraintes pour les tables déchargées
@@ -194,7 +186,8 @@ ALTER TABLE `stagiaire`
 --
 -- Contraintes pour la table `demande_stage`
 --
-
+ALTER TABLE `demande_stage`
+  ADD CONSTRAINT `demande_stage_ibfk_1` FOREIGN KEY (`ID_Stagiaire`) REFERENCES `stagiaire` (`ID_Stagiaire`);
 
 --
 -- Contraintes pour la table `facture`

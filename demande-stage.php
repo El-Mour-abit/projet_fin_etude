@@ -25,19 +25,22 @@ include('stage.php');
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item ">
-            <a class="nav-link" href="http://localhost/projet/projet_fin_etude/Views/Home.html">Acceuil</a>
+            <a class="nav-link" href="Home.html">Acceuil</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="http://localhost/projet/projet_fin_etude/Views/AboutUs.html">AboutUs</a>
+            <a class="nav-link " href="AboutUs.html">AboutUs</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="http://localhost/projet/projet_fin_etude/Views/EspaceClient.html">Espace Client</a>
+            <a class="nav-link " href="EspaceClient.html">Espace Client</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link " href="http://localhost/projet/projet_fin_etude/Views/EspaceStagiaire.php">Espace Stagiaire</a>
+            <a class="nav-link " href="EspaceStagiaire.html">Espace Stagiaire</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="http://localhost/projet/projet_fin_etude/Views/ContactUs.html"">ContactUs</a>
+            <a class="nav-link " href="ContactUs.html"">ContactUs</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link " href="LogInAdmin.php"">Admin</a>
           </li>
         </ul>
         <form class=" form-inline my-2 my-lg-0">
@@ -46,11 +49,15 @@ include('stage.php');
       </div>
     </nav>
   </header>
-
+  <h1 class="text-dark"> Welcome Mr <span class="text-info text-uppercase"><?php  echo $_SESSION['nom'] ;?></span></h1>
   <h1>Poser Votre demande de Stage</h1>
 
   <form class="w-100"  method="POST">
     <div class="w-75 m-auto">
+    <div class="form-group">
+        <label>nom</label>
+        <input type="number" class="form-control" placeholder="votre numéro " name="stage-num">
+      </div>
       <div class="form-group">
         <label>nom</label>
         <input type="text" class="form-control" placeholder="votre nom" name="stage-nom">
@@ -76,9 +83,6 @@ include('stage.php');
         unset($_SESSION['login_success_message']);
     }
     ?>
-
-
-
   <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.2)">
     © 2024 Copyright:
     >ONEP-Al-hoceima

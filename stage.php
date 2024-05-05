@@ -11,7 +11,8 @@ session_start();
     $stage_nom= $_POST['stage-nom'];
     $stage_prenom = $_POST['stage-prenom'];
     $stage_demande = $_POST['stage-demande'];
-    $add = "INSERT INTO demande_stage (nom, prenom,Texte) VALUES ('$stage_nom', '$stage_prenom','$stage_demande')";
+    $stage_num = $_POST['stage-num'];
+    $add = "INSERT INTO demande_stage (nom, prenom,Texte,ID_Stagiaire) VALUES ('$stage_nom', '$stage_prenom','$stage_demande','$stage_num')";
     if($stage_nom == '' || $stage_prenom == '' || $stage_demande == ''){
       echo "Vous devez remplir tout les champs";
     } else{
@@ -26,7 +27,6 @@ session_start();
             });
           </script>
         ';
-
     }
   }
 }
