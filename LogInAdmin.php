@@ -48,7 +48,7 @@
 
 
 <div class="login-container mt-5">
-  <form class="login-form" action="admin.php" method="POST">
+  <form class="login-form" action="Dashboard-admin.php" method="POST">
     <p class="heading">Login</p>
     <p class="paragraph">Login to your account</p>
     <div class="input-group">

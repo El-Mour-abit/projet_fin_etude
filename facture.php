@@ -67,18 +67,22 @@ $result=mysqli_query($cnx,$req);
         echo "<td>".$row["Montant"]."</td>";
         echo "<td>".$row["statut_paiement"]."</td>"; // Afficher le statut de paiement
 
-        if ($row["statut_paiement"] === "payée") {
-            echo "<td>Payée</td>";
+        if (!empty($row["Montant"])) { // Vérifier si le champ Montant n'est pas vide
+            if ($row["statut_paiement"] === "payée") {
+                echo "<td>Payée</td>";
+            } else {
+                echo "<td>
+                        <form method=\"post\" action=\"update_payment_status.php\">
+                            <input type=\"hidden\" name=\"facture\" value=\"" . $row["Num_facture"] . "\">
+                            <button type=\"submit\">Payer votre facture</button>
+                        </form>
+                      </td>";
+            }
         } else {
-            echo "<td>
-                    <form method=\"post\" action=\"update_payment_status.php\">
-                        <input type=\"hidden\" name=\"facture\" value=\"" . $row["Num_facture"] . "\">
-                        <button type=\"submit\">Payer votre facture</button>
-                    </form>
-                  </td>";
+            // Si le champ Montant est vide, afficher un message
+            echo "<td>Montant vide</td>";
         }
-    // ...
-}
+    }
 
     echo "</table>
     </section>

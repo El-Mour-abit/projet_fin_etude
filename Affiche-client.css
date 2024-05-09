@@ -1,0 +1,71 @@
+/* Styles généraux */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #8afbff;
+}
+
+h1 {
+    text-align: center;
+}
+
+section {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #8afbff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-x: auto; /* Permet de faire défiler horizontalement si nécessaire */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color:  #8afbff;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #8afbff;
+}
+
+/* Formulaire */
+form {
+    margin-bottom: 20px;
+}
+
+input[type='text'] {
+    width: calc(100% - 20px);
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type='submit'] {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Media Queries pour la réactivité */
+
+@media screen and (max-width: 600px) {
+    section {
+        width: 90%;
+    }
+}
