@@ -104,10 +104,10 @@
                         <a class="nav-link " href="EspaceStagiaire.html">Espace Stagiaire</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="ContactUs.html"">ContactUs</a>
+                        <a class="nav-link " href="ContactUs.html">ContactUs</a>
           </li>
           <li class=" nav-item ">
-                            <a class="nav-link " href="LogInAdmin.php"">Admin</a>
+                            <a class="nav-link " href="LogInAdmin.php">Admin</a>
           </li>
         </ul>
         <form class=" form-inline my-2 my-lg-0">
