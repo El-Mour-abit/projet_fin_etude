@@ -24,7 +24,7 @@
             <a class="nav-link" href="Home.html">Acceuil</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="AboutUs.html">AboutUs</a>
+            <a class="nav-link " href="AboutUs.html">Apropos-de-nous</a>
           </li>
           <li class="nav-item">
             <a class="nav-link " href="EspaceClient.html">Espace Client</a>
@@ -33,10 +33,10 @@
             <a class="nav-link " href="EspaceStagiaire.html">Espace Stagiaire</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="ContactUs.html"">ContactUs</a>
+            <a class="nav-link " href="ContactUs.html"">contactez-nous</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link " href="LogInAdmin.php"">Admin</a>
+            <a class="nav-link " href="LogInAdmin.php"">Administrateur</a>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">

@@ -17,7 +17,7 @@ $email = $_POST['mail'];
 $code = $_POST['code'];
 $numero1 = $_POST['num1'];
 $numero2=$_POST['num2'];
-
+$_SESSION['nom'] = $nom;
 $errors = []; // Initialise le tableau pour stocker les messages d'erreur
 
 // Vérification si le mot de passe est déjà utilisé

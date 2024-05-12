@@ -27,6 +27,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
     $result = mysqli_query($cnx, $req);
 
     // Affichage des informations du client et de la facture
+    echo '<p style="font-family: Arial, sans-serif; font-size: 16px; color: #333; text-align:center; padding:25px; font-size:35px"> <span style="font-size:40px; color:blue;">Bienvenue </span> ' . $_SESSION['nom'] . '</p>';
     echo "<!DOCTYPE html>
 <html lang=\"en\">
 <head>
