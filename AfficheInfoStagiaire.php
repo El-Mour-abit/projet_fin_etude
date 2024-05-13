@@ -131,7 +131,7 @@ if (!$connexion) {
 $sql = "SELECT s.ID_Stagiaire, s.nom, s.prenom, s.email, s.date_naissance, d.ID_Demande, d.Texte 
         FROM stagiaire s 
         INNER JOIN demande_stage d ON s.ID_Stagiaire = d.ID_Stagiaire 
-        WHERE s.ID_Stagiaire = '" . $_SESSION['num'] . "' OR s.ID_Stagiaire = '" . $_SESSION['numéro_s'] . "' 
+        WHERE s.ID_Stagiaire = '" . $_SESSION['num'] . "' 
         LIMIT 1";
 
 
