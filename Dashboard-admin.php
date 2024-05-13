@@ -58,7 +58,7 @@ mysqli_close($cnx);
             <h2>Nombre de factures</h2>
             <p><?php echo $totalFactures; ?></p>
         </div>
-    </div>
+      </div>
 	<div class="app-body">
 		<div class="app-body-navigation">
 			<nav class="navigation">

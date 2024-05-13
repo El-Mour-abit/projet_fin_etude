@@ -11,6 +11,7 @@
       if(isset($_POST['submit'])) {
         $nom= $_POST['nom'];
         $password = $_POST['password'];
+        $_SESSION['nom'] = $nom;
         $req = "SELECT * FROM admin WHERE nom = '$nom' AND mot_de_passe = '$password'";
         if($nom == '' || $password == '' ) {
             echo '<script>alert("Veuillez remplir tous les champs")</script>';
