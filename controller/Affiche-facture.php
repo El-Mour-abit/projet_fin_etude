@@ -46,7 +46,7 @@ $result=mysqli_query($cnx,$req);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="Affiche-client.css">
+    <link rel="stylesheet" href="../views/Affiche-client.css">
 </head>
 <body>
     <h1>La Liste De Toutes Les Factures </h1>

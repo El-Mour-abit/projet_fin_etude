@@ -38,7 +38,7 @@ mysqli_close($cnx);
   <meta charset="UTF-8">
   <title>CodePen - Dark UI - Bank dashboard concept</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-<link rel="stylesheet" href="./Dashboard-Admin.css">
+<link rel="stylesheet" href="../views/Dashboard-admin.css">
 
 </head>
 <body>

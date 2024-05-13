@@ -16,11 +16,12 @@
 
         main {
             max-width: 600px;
-            margin: 20px auto;
             background-color: #fff;
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 50px;
+            margin-left: 450px;
         }
 
         h1 {
@@ -91,22 +92,22 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item ">
-                        <a class="nav-link" href="Home.html">Acceuil</a>
+                        <a class="nav-link" href="../views/Home.html">Acceuil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="AboutUs.html">Apropos-de-nous</a>
+                        <a class="nav-link " href="../views/AboutUs.html">Apropos-de-nous</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="EspaceClient.html">Espace Client</a>
+                        <a class="nav-link " href="../views/EspaceClient.html">Espace Client</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="EspaceStagiaire.html">Espace Stagiaire</a>
+                        <a class="nav-link " href="../views/EspaceStagiaire.html">Espace Stagiaire</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="ContactUs.html"">contactez-nous</a>
+                        <a class="nav-link " href="../views/ContactUs.html">contactez-nous</a>
           </li>
-          <li class=" nav-item active">
-                            <a class="nav-link " href="afficheAdmin.php"">Administrateur</a>
+          <li class=" nav-item ">
+                            <a class="nav-link " href="LogInAdmin.php">Administrateur</a>
           </li>
         </ul>
         <form class=" form-inline my-2 my-lg-0">
@@ -117,53 +118,63 @@
     </header>
     <!-- header end -->
     <h1>Informations Stagiaire et Demande de Stage</h1>
+<?php
+session_start();
+$serveur = "localhost"; 
+$utilisateur = "root"; 
+$motDePasse = ""; 
+$baseDeDonnees = "projet_fin_etude"; 
+$connexion = mysqli_connect($serveur, $utilisateur, $motDePasse, $baseDeDonnees);
+if (!$connexion) {
+    die("La connexion à la base de données a échoué : " . mysqli_connect_error());
+}
+$sql = "SELECT s.ID_Stagiaire, s.nom, s.prenom, s.email, s.date_naissance, d.ID_Demande, d.Texte 
+        FROM stagiaire s 
+        INNER JOIN demande_stage d ON s.ID_Stagiaire = d.ID_Stagiaire 
+        WHERE s.ID_Stagiaire = '" . $_SESSION['num'] . "' 
+        LIMIT 1";
+
+
+
+
+$resultat = mysqli_query($connexion, $sql);
+
+if (mysqli_num_rows($resultat) > 0) {
+    while ($ligne = mysqli_fetch_assoc($resultat)) {
+?>
+        <main>
+        <h1>Informations de stage</h1>
+        <div>
+            <p>ID Stagiaire: <?php echo $ligne['ID_Stagiaire']; ?></p>
+            <p>Nom: <?php echo $ligne['nom']; ?></p>
+            <p>Prénom: <?php echo $ligne['prenom']; ?></p>
+            <p class="p">Email: <?php echo $ligne['email']; ?></p>
+            <p class="p">Date de naissance: <?php echo $ligne['date_naissance']; ?></p>
+            <p><?php echo $ligne['Texte']; ?></p>
+        </div>
+    </main>
     <?php
-
-    session_start();
-    $serveur = "localhost";
-    $utilisateur = "root";
-    $motDePasse = "";
-    $baseDeDonnees = "projet_fin_etude";
-    $connexion = mysqli_connect($serveur, $utilisateur, $motDePasse, $baseDeDonnees);
-    if (!$connexion) {
-        die("La connexion à la base de données a échoué : " . mysqli_connect_error());
-    }
-    $sql = "SELECT s.*, d.* 
-            FROM stagiaire s 
-            INNER JOIN demande_stage d ON s.ID_Stagiaire = d.ID_Stagiaire";
-
-    $resultat = mysqli_query($connexion, $sql);
-
-    if (mysqli_num_rows($resultat) > 0) {
-        while ($ligne = mysqli_fetch_assoc($resultat)) {
-    ?>
-            <a href="AfficheInfoStagiaire.php">
-                <main>
-                    <h1>Informations de stage</h1>
-                    <div>
-                        <p>ID Stagiaire: <?php echo $ligne['ID_Stagiaire']; ?></p>
-                        <p>Nom: <?php echo $ligne['nom']; ?></p>
-                        <p>Prénom: <?php echo $ligne['prenom']; ?></p>
-                        <p class="p">Email: <?php echo $ligne['email']; ?></p>
-                        <p class="p">Date de naissance: <?php echo $ligne['date_naissance']; ?></p>
-                        <p><?php echo $ligne['Texte']; ?></p>
-                    </div>
-                </main>
-            </a>
-                <form action="sendnum.php" method="POST" class="div">
-                    <span>le numéro est sisaie cette numéro <span class="text-warning"><?php echo $ligne['ID_Stagiaire']?></span> </span>
-                    <input type="number" placeholder="le numéro de stagiaire" name="number">
-                    <button class="btn btn-outline-dark" name="btnvalide">Valider</button>
-                </form>
-    <?php
-
-        }
+    if(isset($_SESSION['etate'])) {
+        $etate = $_SESSION['etate'];
     } else {
-        echo "Aucun résultat trouvé.";
+        $etate = "ETATE";
     }
+?>
+    <button class="no-text-decoration btn btn-outline-dark my-2 my-sm-0" id="btn">Voir La Vérification</button>
+    <h2 class="text-dark" id="h2">État de votre demande : <span class="text-info"><?php echo $etate?></span></h2>
+<?php
+    }
+} else {
+    echo "Aucun résultat trouvé.";
+}
 
-    mysqli_close($connexion);
-    ?>
-</body>
-
-</html>
+// Fermer la connexion
+mysqli_close($connexion);
+?>
+<script>
+    var btn = document.getElementById('btn');
+    var h2 = document.getElementById('h2');
+    btn.addEventListener('click', function(){
+        h2.style.visibility = 'visible';
+    });
+</script>

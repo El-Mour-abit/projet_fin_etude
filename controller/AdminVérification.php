@@ -50,7 +50,7 @@
             font-size: 35px;
             font-weight: 600;
             margin: 25px;
-            visibility: collapse;
+            visibility: visible;
         }
 
         #botton {
@@ -76,6 +76,13 @@
             padding: 10px;
             margin: 10px;
         }
+        input {
+            border: white;
+            border-radius: 10px;
+            width: 200px;
+            padding: 10px;
+            margin: 10px;
+        }
     </style>
 </head>
 
@@ -92,22 +99,22 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item ">
-                        <a class="nav-link" href="Home.html">Acceuil</a>
+                        <a class="nav-link" href="../views/Home.html">Acceuil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="AboutUs.html">Apropos-de-nous</a>
+                        <a class="nav-link " href="../views/AboutUs.html">Apropos-de-nous</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="EspaceClient.html">Espace Client</a>
+                        <a class="nav-link " href="../views/EspaceClient.html">Espace Client</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="EspaceStagiaire.html">Espace Stagiaire</a>
+                        <a class="nav-link " href="../views/EspaceStagiaire.html">Espace Stagiaire</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="ContactUs.html">contactez-nous</a>
+                        <a class="nav-link " href="../views/ContactUs.html"">contactez-nous</a>
           </li>
           <li class=" nav-item ">
-                            <a class="nav-link " href="LogInAdmin.php">Administrateur</a>
+                            <a class="nav-link " href="LogInAdmin.php"">Administrateur</a>
           </li>
         </ul>
         <form class=" form-inline my-2 my-lg-0">
@@ -131,9 +138,7 @@ if (!$connexion) {
 $sql = "SELECT s.ID_Stagiaire, s.nom, s.prenom, s.email, s.date_naissance, d.ID_Demande, d.Texte 
         FROM stagiaire s 
         INNER JOIN demande_stage d ON s.ID_Stagiaire = d.ID_Stagiaire 
-        WHERE s.ID_Stagiaire = '" . $_SESSION['num'] . "' 
-        LIMIT 1";
-
+        WHERE s.ID_Stagiaire = " . $_SESSION['numéro_s'];
 
 
 
@@ -154,14 +159,21 @@ if (mysqli_num_rows($resultat) > 0) {
         </div>
     </main>
     <?php
-    if(isset($_SESSION['etate'])) {
+    $etate = "ETATE";
+    if(isset($_POST['vérifier'])) {
+        $etate = $_POST['etate'];
+        $_SESSION['etate'] = $etate;
+    }
+    elseif(isset($_SESSION['etate'])) {
         $etate = $_SESSION['etate'];
-    } else {
-        $etate = "ETATE";
     }
 ?>
-    <button class="no-text-decoration btn btn-outline-dark my-2 my-sm-0" id="btn">Voir La Vérification</button>
-    <h2 class="text-dark" id="h2">État de votre demande : <span class="text-info"><?php echo $etate?></span></h2>
+<form action="#" method="POST">
+    <input type="text" placeholder="Etate" name="etate" value="<?php echo $etate; ?>">
+    <button type="submit" name="vérifier" class="btn btn-outline-dark my-2 my-sm-0">Valider</button>
+</form>
+<h2 class="text-dark" id="h2">État de votre commande : <span class="text-info"><?php echo $etate?></span></h2>
+
 <?php
     }
 } else {
@@ -171,10 +183,3 @@ if (mysqli_num_rows($resultat) > 0) {
 // Fermer la connexion
 mysqli_close($connexion);
 ?>
-<script>
-    var btn = document.getElementById('btn');
-    var h2 = document.getElementById('h2');
-    btn.addEventListener('click', function(){
-        h2.style.visibility = 'visible';
-    });
-</script>
